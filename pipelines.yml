@@ -1,0 +1,26 @@
+resources:
+  - name: PropBagTest
+    type: PropertyBag
+    configuration:
+      name: 'notset'
+      id: 'boj-notset'
+      
+ pipelines:
+  - name: test-pipe    
+     steps:
+      - name: firstStep
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: myFirstRepo2
+          outputResources:
+            - name:  PropBagTest
+        execution:
+          onExecute:
+            - echo $current_runid
+            # Writes current run number to pipeline state
+            - add_pipeline_variables prev_runid=$run_id
+            # Uses an utility function to update the output resource with the commitSha that triggered this run
+            # Dependent pipelines can be configured to trigger when this resource is updated
+            # Utility functions documentation: https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions
+            - write_output  PropBagTest name="someName" id="newId"
