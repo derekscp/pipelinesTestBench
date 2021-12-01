@@ -35,11 +35,11 @@ pipelines:
             # Utility functions documentation: https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions
             - write_output  PropBagTest name="someName" id="newId"
             
-    - name: checkChange
-      type: Bash
-      configuration:
-        inputResources:
-         - name: PropBagTest
-        execution:
-          onExecute:
-           - printenv res_PropBagTest_name
+      - name: checkChange
+        type: Bash
+        configuration:
+          inputResources:
+           - name: PropBagTest
+          execution:
+            onExecute:
+             - printenv res_PropBagTest_name
