@@ -11,8 +11,8 @@ pipelines:
       - name: firstStep
         type: Bash
         configuration:
-          inputSteps:
-            - name: PropBagTest
+          inputResources:
+            - name: myFirstRepo2
           outputResources:
             - name:  PropBagTest
         execution:
