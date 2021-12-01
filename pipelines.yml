@@ -16,7 +16,7 @@ resources:
         include: master
       
 pipelines:
-   - name: test_pipe    
+   - name: test_pipe2    
      steps:
       - name: firstStep
         type: Bash
