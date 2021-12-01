@@ -4,6 +4,16 @@ resources:
     configuration:
       name: 'notset'
       id: 'boj-notset'
+  - name: myFirstRepo2
+    type: GitRepo
+    configuration:
+      # SCM integration where the repository is located
+      gitProvider: derekTestIntegration
+      # Repository path, including org name/repo name
+      path: derekscp/jfrog-pipelines-simple-example
+      branches:
+        # Specifies which branches will trigger dependent steps
+        include: master
       
 pipelines:
    - name: test_pipe    
