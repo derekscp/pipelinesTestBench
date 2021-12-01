@@ -6,7 +6,7 @@ resources:
       id: 'boj-notset'
       
 pipelines:
-   - name: test-pipe    
+   - name: test_pipe    
      steps:
       - name: firstStep
         type: Bash
