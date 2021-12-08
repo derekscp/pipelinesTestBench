@@ -1,4 +1,10 @@
 resources:
+  - name: pipelinesBuildInfo
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artiIntegration
+      buildName: pipelinesTestBench
+      buildNumber: 1
   - name: PropBagTest
     type: PropertyBag
     configuration:
@@ -47,7 +53,7 @@ pipelines:
         type: PublishBuildInfo
         configuration:
           inputSteps:
-            - name: firstStep
+            - name: PipelinesBuildInfo
           outputResources:
             - name: PropBagTest
         execution:
