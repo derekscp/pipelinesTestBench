@@ -60,8 +60,9 @@ pipelines:
             - name: pipelinesBuildInfo
         execution:
           onStart:
-            - env
-            - export buildName=pipelinesTestBench
-            - export buildNumber=1
+            #- env
+            #- export buildName=pipelinesTestBench
+            #- export buildNumber=1
+            - echo "Preparing for work..."
           onComplete:
             - env
