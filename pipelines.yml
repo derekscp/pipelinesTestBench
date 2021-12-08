@@ -53,9 +53,9 @@ pipelines:
         type: PublishBuildInfo
         configuration:
           inputSteps:
-            - name: pipelinesBuildInfo
+            - name: firstStep
           outputResources:
-            - name: PropBagTest
+            - name: pipelinesBuildInfo
         execution:
           onStart:
             - env
