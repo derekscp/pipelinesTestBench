@@ -39,6 +39,7 @@ pipelines:
             ##- export buildName=24
             ##- export buildNumber=pipelinesTestBench
             - export JFROG_CLI_BUILD_NUMBER=${run_number}
+            - echo $JFROG_CLI_BUILD_NUMBER
             - export JFROG_CLI_BUILD_NAME=pipelinesTestBench
             # Uses an utility function to update the output resource with the commitSha that triggered this run
             # Dependent pipelines can be configured to trigger when this resource is updated
@@ -64,7 +65,7 @@ pipelines:
           onStart:
             #- env
             - export buildName=pipelinesTestBench
-            - export buildNumber=1
+            - export buildNumber=${run_number}
             - echo "Preparing for work..."
           onComplete:
             - env
