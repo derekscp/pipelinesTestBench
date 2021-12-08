@@ -36,6 +36,8 @@ pipelines:
             - echo $current_runid
             # Writes current run number to pipeline state
             - add_pipeline_variables prev_runid=$run_id
+            - export JFROG_CLI_BUILD_NUMBER=${run_number}
+            - export JFROG_CLI_BUILD_NAME=lab_ami_centos_7_hardened
             # Uses an utility function to update the output resource with the commitSha that triggered this run
             # Dependent pipelines can be configured to trigger when this resource is updated
             # Utility functions documentation: https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions
