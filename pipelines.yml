@@ -41,6 +41,7 @@ pipelines:
             - export JFROG_CLI_BUILD_NUMBER=${run_number}
             - echo $JFROG_CLI_BUILD_NUMBER
             - export JFROG_CLI_BUILD_NAME=pipelinesTestBench
+            - touch samplefile.txt
             # Uses an utility function to update the output resource with the commitSha that triggered this run
             # Dependent pipelines can be configured to trigger when this resource is updated
             # Utility functions documentation: https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions
