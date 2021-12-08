@@ -4,7 +4,7 @@ resources:
     configuration:
       sourceArtifactory: artiIntegration
       buildName: pipelinesTestBench
-      buildNumber: 1
+      buildNumber: ${run_number}
   - name: PropBagTest
     type: PropertyBag
     configuration:
