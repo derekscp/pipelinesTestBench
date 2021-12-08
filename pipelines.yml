@@ -61,5 +61,7 @@ pipelines:
         execution:
           onStart:
             - env
+            - export buildName=24
+            - export buildNumber=pipelinesTestBench
           onComplete:
             - env
