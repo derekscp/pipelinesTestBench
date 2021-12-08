@@ -43,3 +43,15 @@ pipelines:
         execution:
           onExecute:
            - printenv res_PropBagTest_name
+      - name: publish_build
+        type: PublishBuildInfo
+        configuration:
+          inputSteps:
+            - name: firstStep
+          outputResources:
+            - name: PropBagTest
+        execution:
+          onStart:
+            - env
+          onComplete:
+            - env
