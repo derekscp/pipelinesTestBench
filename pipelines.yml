@@ -53,7 +53,7 @@ pipelines:
         type: PublishBuildInfo
         configuration:
           inputSteps:
-            - name: PipelinesBuildInfo
+            - name: pipelinesBuildInfo
           outputResources:
             - name: PropBagTest
         execution:
