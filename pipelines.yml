@@ -20,6 +20,13 @@ resources:
       branches:
         # Specifies which branches will trigger dependent steps
         include: master
+  - name: go_repo
+    type: GitRepo
+    configuration:
+      path: derekscp/pipelines-steps-examples 
+      branches:
+        include: main
+      gitProvider: derekTestIntegration
       
 pipelines:
    - name: test_pipe2    
@@ -43,12 +50,30 @@ pipelines:
             - export JFROG_CLI_BUILD_NAME=pipelinesTestBench
             - touch samplefile.txt
             - jfrog -v
-            - jfrog rt u samplefile.txt derek-generic-local --build-name=$JFROG_CLI_BUILD_NAME --build-number=$JFROG_CLI_BUILD_NUMBER
+            #- jfrog rt u samplefile.txt derek-generic-local --build-name=$JFROG_CLI_BUILD_NAME --build-number=$JFROG_CLI_BUILD_NUMBER
             # Uses an utility function to update the output resource with the commitSha that triggered this run
             # Dependent pipelines can be configured to trigger when this resource is updated
             # Utility functions documentation: https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions
             - write_output  PropBagTest name="someName" id="newId"
             
+      - name: build_go
+        type: GoBuild
+        configuration:
+          sourceLocation: .
+          resolverRepo: derek-go-virtual
+          noRegistry: true
+          inputResources:
+            - name: go_repo
+          integrations:
+            - name: artiIntegration
+      - name: publish_go_binary
+        type: GoPublishBinary
+        configuration:
+          inputSteps:
+            - name: build_go
+          targetRepository: derek-go-local
+          integrations:
+            - name: artiIntegration           
       - name: checkChange
         type: Bash
         configuration:
