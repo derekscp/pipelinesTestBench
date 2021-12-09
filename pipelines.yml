@@ -36,6 +36,7 @@ pipelines:
         configuration:
           inputResources:
             - name: myFirstRepo2
+            - name: pipelinesBuildInfo
           outputResources:
             - name:  PropBagTest
         execution:
@@ -50,7 +51,8 @@ pipelines:
             - export JFROG_CLI_BUILD_NAME=pipelinesTestBench
             - touch samplefile.txt
             - jfrog -v
-            #- jfrog rt u samplefile.txt derek-generic-local --build-name=$JFROG_CLI_BUILD_NAME --build-number=$JFROG_CLI_BUILD_NUMBER
+            - jfrog rt use artIntegration
+            - jfrog rt u samplefile.txt derek-generic-local --build-name=$JFROG_CLI_BUILD_NAME --build-number=$JFROG_CLI_BUILD_NUMBER
             # Uses an utility function to update the output resource with the commitSha that triggered this run
             # Dependent pipelines can be configured to trigger when this resource is updated
             # Utility functions documentation: https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions
