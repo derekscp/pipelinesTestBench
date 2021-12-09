@@ -5,6 +5,13 @@ resources:
       sourceArtifactory: artiIntegration
       buildName: pipelinesTestBench
       buildNumber: ${run_number}
+resources:
+  - name: pipelinesBuildInfotest
+    type: BuildInfo
+    configuration:
+      sourceArtifactory: artiIntegration
+      buildName: pipelinesTestBench
+      buildNumber: ${run_number}      
   - name: PropBagTest
     type: PropertyBag
     configuration:
@@ -15,7 +22,6 @@ resources:
     configuration:
       # SCM integration where the repository is located
       gitProvider: derekTestIntegration
-      sourceArtifactory: artiIntegration
       # Repository path, including org name/repo name
       path: derekscp/jfrog-pipelines-simple-example
       branches:
@@ -37,7 +43,7 @@ pipelines:
         configuration:
           inputResources:
             - name: myFirstRepo2
-#            - name: pipelinesBuildInfo
+            - name: pipelinesBuildInfotest
           outputResources:
             - name:  PropBagTest
         execution:
