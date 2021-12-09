@@ -15,6 +15,7 @@ resources:
     configuration:
       # SCM integration where the repository is located
       gitProvider: derekTestIntegration
+      sourceArtifactory: artiIntegration
       # Repository path, including org name/repo name
       path: derekscp/jfrog-pipelines-simple-example
       branches:
