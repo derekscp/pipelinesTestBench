@@ -58,7 +58,7 @@ pipelines:
       - name: build_go
         type: GoBuild
         configuration:
-          goCommand: go mod download rsc.io/quote
+          goCommand: mod download rsc.io/quote
           sourceLocation: .
           resolverRepo: derek-go-virtual
           noRegistry: true
