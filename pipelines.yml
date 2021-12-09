@@ -90,7 +90,7 @@ pipelines:
         type: PublishBuildInfo
         configuration:
           inputSteps:
-            - name: publish_go_binary
+            - name: firstStep
           outputResources:
             - name: pipelinesBuildInfo
         execution:
