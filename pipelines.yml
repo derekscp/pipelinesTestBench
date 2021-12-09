@@ -43,6 +43,8 @@ pipelines:
           inputResources:
             - name: myFirstRepo2
             - name: pipelinesBuildInfotest
+          integrations:
+            - name: artiIntegration
           outputResources:
             - name:  PropBagTest
         execution:
