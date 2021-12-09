@@ -29,7 +29,7 @@ resources:
       gitProvider: derekTestIntegration
       
 pipelines:
-   - name: test_pipe3    
+   - name: test_pipe2   
      steps:
       - name: firstStep
         type: Bash
@@ -90,7 +90,7 @@ pipelines:
         type: PublishBuildInfo
         configuration:
           inputSteps:
-            - name: firstStep
+            - name: PropBagTest
           outputResources:
             - name: pipelinesBuildInfo
         execution:
