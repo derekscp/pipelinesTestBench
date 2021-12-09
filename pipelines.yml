@@ -29,7 +29,7 @@ resources:
       gitProvider: derekTestIntegration
       
 pipelines:
-   - name: test_pipe2    
+   - name: test_pipe3    
      steps:
       - name: firstStep
         type: Bash
