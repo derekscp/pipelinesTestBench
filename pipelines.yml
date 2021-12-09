@@ -23,7 +23,7 @@ resources:
   - name: go_repo
     type: GitRepo
     configuration:
-      path: derekscp/jfrog-pipelines-steps-examples 
+      path: derekscp/jfrog-pipelines-steps-examples/GoBuild
       branches:
         include: main
       gitProvider: derekTestIntegration
