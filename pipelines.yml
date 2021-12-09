@@ -57,27 +57,27 @@ pipelines:
             # Dependent pipelines can be configured to trigger when this resource is updated
             # Utility functions documentation: https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions
             - write_output  PropBagTest name="someName" id="newId"       
-      - name: build_go
-        type: GoBuild
-        configuration:
-          goCommand: mod download rsc.io/quote
-          sourceLocation: .
-          resolverRepo: derek-go-virtual
-          noRegistry: true
-          inputSteps:
-            - name: firstStep
-          inputResources:
-            - name: go_repo
-          integrations:
-            - name: artiIntegration
-      - name: publish_go_binary
-        type: GoPublishBinary
-        configuration:
-          inputSteps:
-            - name: build_go
-          targetRepository: derek-go-local
-          integrations:
-            - name: artiIntegration           
+#      - name: build_go
+#        type: GoBuild
+#        configuration:
+#          goCommand: mod download rsc.io/quote
+#          sourceLocation: .
+#          resolverRepo: derek-go-virtual
+#          noRegistry: true
+#          inputSteps:
+#            - name: firstStep
+#          inputResources:
+#            - name: go_repo
+#          integrations:
+#            - name: artiIntegration
+#      - name: publish_go_binary
+#        type: GoPublishBinary
+#        configuration:
+#          inputSteps:
+#            - name: build_go
+#          targetRepository: derek-go-local
+#          integrations:
+#            - name: artiIntegration           
       - name: checkChange
         type: Bash
         configuration:
