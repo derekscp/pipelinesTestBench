@@ -62,7 +62,8 @@ pipelines:
             - jfrog rt use artiIntegration
             - jfrog rt u samplefile.txt derek-generic-local --build-name=$JFROG_CLI_BUILD_NAME --build-number=$JFROG_CLI_BUILD_NUMBER
             - jfrog rt bce $JFROG_CLI_BUILD_NAME  $JFROG_CLI_BUILD_NUMBER
-            - jfrog rt bp $JFROG_CLI_BUILD_NAME  $JFROG_CLI_BUILD_NUMBER
+            #- jfrog rt bp $JFROG_CLI_BUILD_NAME  $JFROG_CLI_BUILD_NUMBER
+            - add_run_files /tmp/jfrog/. jfrog
             # Uses an utility function to update the output resource with the commitSha that triggered this run
             # Dependent pipelines can be configured to trigger when this resource is updated
             # Utility functions documentation: https://www.jfrog.com/confluence/display/JFROG/Pipelines+Utility+Functions
