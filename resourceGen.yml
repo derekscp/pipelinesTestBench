@@ -1,0 +1,5 @@
+  - name: PropBagTest
+    type: PropertyBag
+    configuration:
+      name: 'notset'
+      id: 'boj-notset'
