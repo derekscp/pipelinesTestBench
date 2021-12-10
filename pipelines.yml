@@ -11,11 +11,11 @@ resources:
       sourceArtifactory: artiIntegration
       buildName: pipelinesTestBench
       buildNumber: ${run_number}      
-  - name: PropBagTest
-    type: PropertyBag
-    configuration:
-      name: 'notset'
-      id: 'boj-notset'
+#  - name: PropBagTest
+#    type: PropertyBag
+#    configuration:
+#      name: 'notset'
+#      id: 'boj-notset'
   - name: myFirstRepo2
     type: GitRepo
     configuration:
