@@ -35,7 +35,7 @@ resources:
       gitProvider: derekTestIntegration
       
 pipelines:
-   - name: test_pipe2   
+   - name: test_pipe
      steps:
       - name: firstStep
         type: Bash
@@ -46,7 +46,7 @@ pipelines:
           integrations:
             - name: artiIntegration
           outputResources:
-            - name:  PropBagTest2
+            - name:  PropBagTest
         execution:
           onExecute:
             - echo $current_runid
