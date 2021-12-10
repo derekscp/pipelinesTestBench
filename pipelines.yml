@@ -46,7 +46,7 @@ pipelines:
           integrations:
             - name: artiIntegration
           outputResources:
-            - name:  PropBagTest
+            - name:  PropBagTest2
         execution:
           onExecute:
             - echo $current_runid
@@ -93,7 +93,7 @@ pipelines:
         type: Bash
         configuration:
           inputResources:
-           - name: PropBagTest
+           - name: PropBagTest2
         execution:
           onExecute:
            - printenv res_PropBagTest_name
