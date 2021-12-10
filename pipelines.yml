@@ -96,7 +96,7 @@ pipelines:
            - name: PropBagTest2
         execution:
           onExecute:
-           - printenv res_PropBagTest_name
+           - printenv res_PropBagTest2_name
       - name: publish_build
         type: PublishBuildInfo
         configuration:
